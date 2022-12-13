@@ -12,5 +12,18 @@ public enum Coin {
         this.amount = amount;
     }
 
+    public int getAmount() {
+        return amount;
+    }
+    public static Coin getCoin(int amount) {
+        Coin[] coins = Coin.values();
+        for (Coin coin : coins) {
+            if (coin.amount == amount) {
+                return coin;
+            }
+        }
+        throw new IllegalArgumentException("Invalid amount");
+    }
+
     // 추가 기능 구현
 }
